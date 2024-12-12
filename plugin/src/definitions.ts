@@ -296,6 +296,18 @@ export interface MapPadding {
 }
 
 /**
+ * For web, all the javascript TileOverlay options are available as
+ * For iOS and Android only the config options declared on TileOverlay are available.
+ */
+export interface TileOverlay {
+  getTile: (x: number, y: number, zoom: number) => string;
+  opacity?: number;
+  visible?: boolean;
+  zIndex?: number;
+  debug?: boolean;
+}
+
+/**
  * A marker is an icon placed at a particular point on the map's surface.
  */
 export interface Marker {

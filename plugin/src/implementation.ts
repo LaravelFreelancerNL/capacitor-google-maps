@@ -117,6 +117,15 @@ export interface IndoorMapArgs {
   enabled: boolean;
 }
 
+export interface AddTileOverlayArgs {
+  id: string;
+  getTile: (x: number, y: number, zoom: number) => string;
+  opacity?: number;
+  debug?: boolean;
+  visible?: boolean;
+  zIndex?: number;
+}
+
 export interface TrafficLayerArgs {
   id: string;
   enabled: boolean;
@@ -173,6 +182,7 @@ export interface CapacitorGoogleMapsPlugin extends Plugin {
   create(options: CreateMapArgs): Promise<void>;
   enableTouch(args: { id: string }): Promise<void>;
   disableTouch(args: { id: string }): Promise<void>;
+  addTileOverlay(args: AddTileOverlayArgs): Promise<void>;
   addMarker(args: AddMarkerArgs): Promise<{ id: string }>;
   addMarkers(args: AddMarkersArgs): Promise<{ ids: string[] }>;
   removeMarker(args: RemoveMarkerArgs): Promise<void>;
