@@ -212,7 +212,8 @@ public class Map {
         }
     }
 
-    func addTileOverlay(tile: Tile) {
+		// FIXME: Properly add tile overlay
+		func addTileOverlay(tile: JSObject) throws -> String {
         let floor = 1
 
         // Implement GMSTileURLConstructor
@@ -228,7 +229,9 @@ public class Map {
 
         // Display on the map at a specific zIndex
         layer.zIndex = 100
-        layer.map = mapView
+				layer.map = mapViewController.GMapView
+			
+				return "" // TODO: Return tile ID
     }
 
     func disableTouch() {

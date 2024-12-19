@@ -19,8 +19,8 @@ import com.google.maps.android.clustering.ClusterManager
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
 import java.io.InputStream
+import java.net.HttpURLConnection
 import java.net.URL
-
 
 class CapacitorGoogleMap(
         val id: String,
